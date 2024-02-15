@@ -1,3 +1,4 @@
+
 // This function will let us play the dice game
 function PlayCraps(){
     // narrate what the function does through the console
@@ -45,4 +46,33 @@ function Rolldie(){
 var die = Math.random() * 6;
 // Make sure number is raounded
 return Math.ceil(die);
+}
+function Grover(){
+    var fname = document.getElementById("fname").value;               
+    var lname = document.getElementById("lname").value;
+    var zipcode = document.getElementById("zipcode").value;
+
+    console.log("First name" + fname);
+    console.log("Last name" + lname);
+    console.log("Zipcode" + zipcode);
+    
+    var Fullname = fname + "" +lname;
+    console.log("Fullname" + Fullname);
+
+    // checks name length  if invalid code will reject
+    if(Fullname.length > 20 || Fullname.length == 1){
+        console.log("Invalid name")
+        alert("Enter name shorter than 20 Letters")
+        return false;
+    }
+    else if (zipcode.length !=5){
+   console.log("Invalid zip code")
+   return false;
+}
+   else{
+    console.log("We are good to go ")
+    alert("Welcome. " + Fullname + ". The secret word is pancakes");
+    return true;
+   }
+    
 }
