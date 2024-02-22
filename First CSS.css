@@ -1,0 +1,49 @@
+/* This is a css comment only multiline comments are allowed
+Formatting in css starts with 
+selector{
+    property: value;
+    property: value 2;
+}
+    All page content is in body section so changes to it cause changes to whole page addtional edits require more code
+    
+    We are changing the background and text color
+    */
+body{
+background-color: rgb(100, 0, 139);
+}
+/* Changes the font used for this pages heading */
+h1{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif ;
+    color: rgba(0, 255, 115, 0.589);
+}
+
+nav{
+    height: 60px;
+    width: 200px;
+    float: left;
+    padding: 5px;
+    line-height: 30px;
+}
+footer{
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    text-align: center;
+}
+/* custom selector that only affects what is specified before the braces  */
+#memeimage{
+    position: absolute;
+    left: 25%;
+    top: 25%;
+    width: 200px;
+}
+
+header{
+    text-align: center;
+
+}
+
+a{
+    text-decoration: none;
+    color: blueviolet;
+}

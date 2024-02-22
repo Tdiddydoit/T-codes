@@ -76,3 +76,34 @@ function Grover(){
    }
     
 }
+
+    // Track interval to stop it
+    var Jugo = 0;
+    // This fuction will make image move
+    function MoveImage(){
+        // create varible that will connect to meme image
+        var Bear = document.getElementById("memeimage");
+
+        Jugo = setInterval(function(){
+            // Varible for to hold new X cord
+            var newX = Enderman();
+            // Varible for New Y
+            var newY = Enderman();
+
+            // Code to change image location
+            Bear.style.left = newX + "px";
+            Bear.style.top = newY + "px";
+
+            console.log("x: " + Bear.style.left + "top: " + Bear.style.top)
+        }, 1500); // The 1000 is time in millisecond making code run every one second
+    }
+        //Create stop image function
+        function StopImage(){
+            // call Java to stop image
+            clearInterval(Jugo)
+        }
+        // Creates Ramdom cord
+        function Enderman(){
+            // Returns random cordiante to code that calls it
+            return Math.floor(Math.random()* 1000);
+        }
