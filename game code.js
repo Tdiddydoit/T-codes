@@ -95,7 +95,7 @@ function Grover(){
             Bear.style.top = newY + "px";
 
             console.log("x: " + Bear.style.left + "top: " + Bear.style.top)
-        }, 1500); // The 1000 is time in millisecond making code run every one second
+        }, 1200); // The 1000 is time in millisecond making code run every one second
     }
         //Create stop image function
         function StopImage(){
@@ -106,4 +106,48 @@ function Grover(){
         function Enderman(){
             // Returns random cordiante to code that calls it
             return Math.floor(Math.random()* 1000);
+           //################################################### 
+        }
+        function Eyes(){
+            //EyeTest("radar");
+            //EyeTest("Fun stuff");
+
+            var flash = true;
+            do{
+                // promt user to enter word
+                var userInput = prompt(" Enter a word to see if it is a palindrome: ");
+                var newt = EyeTest(userInput);
+                var message = "";
+                // if word is ture or false notigy user
+                if (newt){
+                    message = userInput + " is a palindrome!";
+                }
+                else{
+                    message = userInput + "is not a palindrome!";
+                }
+                //display mesagge
+                alert(message);
+                // do you want to continue
+                var answer = prompt( "Do you want to continue? (y/n)");
+                if (answer == "n"){
+                    flash = false;
+                }
+            }
+            while(flash);
+            // code will run untill flash is false
+        }
+        // This funtion will test if word is revisible 
+        function EyeTest(strToTest){
+            var strCleaned = strToTest.replace(/\s/g, "").toLowerCase();
+
+            console.log("strCleaned"+ strCleaned);
+            //Put string into array
+            var strArray = strCleaned.split("");
+            //Reverse letters in the array
+            var strReversedArray = strArray.reverse();
+            // Put ray back into string 
+            var strRev = strReversedArray.join("");
+            console.log("strRev" + strRev);
+            //ture or false results
+            return strRev == strCleaned;
         }
