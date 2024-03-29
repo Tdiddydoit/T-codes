@@ -123,7 +123,7 @@ function Grover(){
                     message = userInput + " is a palindrome!";
                 }
                 else{
-                    message = userInput + "is not a palindrome!";
+                    message = userInput + " is not a palindrome!";
                 }
                 //display mesagge
                 alert(message);
@@ -150,4 +150,46 @@ function Grover(){
             console.log("strRev" + strRev);
             //ture or false results
             return strRev == strCleaned;
+        }
+        
+
+        function Sound(){
+            // creates audio element
+            var soundElem = document.createElement("audio");
+
+            // nickname to play button
+            var Playbutton = document.getElementById("Playbtn");
+
+            // nickname to pause button
+            var Pausebutton = document.getElementById("Pausebtn");
+
+            // set attibute for sound element
+            soundElem.setAttribute("id", "mySound");
+            // specifi sound file
+            soundElem.setAttribute("src", "Do u know de way.mp4");
+
+            //audio player controls
+            soundElem.setAttribute("controls", "controls");
+
+            // add audio element to page
+            document.body.appendChild(soundElem);
+
+            console.log("sound added");
+
+            // make play and pause visible
+            Playbutton.hidden = false;
+            Pausebutton.hidden = false;
+        }
+        // runs when play is clicked
+        function Play(){
+          var audio = document.getElementById("mySound");
+          audio.play();
+          console.log("sound played");
+        }
+        
+        // function runs when pause is clicked
+        function Pause(){
+            var audio = document.getElementById("mySound");
+          audio.pause();
+          console.log("sound paused");
         }
