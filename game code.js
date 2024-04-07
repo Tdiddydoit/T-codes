@@ -193,3 +193,143 @@ function Grover(){
           audio.pause();
           console.log("sound paused");
         }
+
+        // Array code
+            // fuction runs on button click
+            function showCons(){
+                // an array to hold our consoles
+                var ConsolesArr = [
+                    "Xbox",
+                    "Playstation",
+                    "Nintendo 64",
+                    "Wii",
+                    "Nintendo switch",
+                    "DS"
+                ];
+    
+                // pointer to console div
+                var consoleDiv = document.getElementById("GameConsoles");
+    
+                // pointer to the button
+                var consoleButton = document.getElementById("Conbtn");
+    
+                //create unorderd list 
+                var ConsoleUl = document.createElement("ul");
+    
+                // add the unorded list to html via the div
+                consoleDiv.appendChild(ConsoleUl);
+    
+                // loop through pant list array and create list item for each consoles
+                // I is counter varible loop will run as long as items in array i increses by 1 every loop
+                for(var i=0; i<ConsolesArr.length; i++){
+                    // create list
+                    var ConsoleLi = document.createElement("Li");
+    
+                    // add the name of plant to the text of list item
+                    ConsoleLi.textContent = ConsolesArr[i];
+    
+                    //add the list item to the unorderd list
+                    ConsoleUl.appendChild(ConsoleLi);
+                }
+    
+                // hide plant button
+                consoleButton.remove();
+    
+            }
+    
+            function showStats(){
+                var GameArr = [
+                    "Rainbow six seige",
+                    "Apex legends",
+                    "Helldivers 2",
+                    "Overwatch"
+                ];
+    
+                var PlaytimeArr = [
+                    "216 hours",
+                    "70 hours",
+                    "116 hours",
+                    "320 hours"
+                ];
+    
+                    // pointer to console div
+                    var VGstat = document.getElementById("VGstats");
+    
+                    // pointer to the button
+                    var statsbutton = document.getElementById("Statbtn");
+    
+                    //create unorderd list 
+                    var StatsUl = document.createElement("ul");
+    
+                    // add the unorded list to html via the div
+                    VGstat.appendChild(StatsUl);
+    
+                    // loop through stats
+                    for(i=0; i<GameArr.length; i++){
+    
+                    // create list
+                    var StatsLi = document.createElement("Li");
+    
+                    // add the name of plant to the text of list item
+                    StatsLi.textContent = GameArr[i] + ": " + PlaytimeArr[i];
+    
+                    //add the list item to the unorderd list
+                    StatsUl.appendChild(StatsLi);
+                    }
+    
+                    //hide button
+                    statsbutton.remove();
+            }
+
+            // Lap recorder
+               // this variable will track current lap
+        // value will change as more laps are recorded
+        var lapcounter = 0;
+
+        //set up array for lap times
+        var lapArr = [
+
+        ];
+
+        // function will record lap and add it to ;a[ counter array
+        function LapTime(){
+            // use push to add item to the end of the array
+            // new date will ade current date and time to array
+            lapArr.push(new Date());
+
+            //print info to console
+            console.log("Lap" + (lapcounter+1) + "recorded" + lapArr[lapcounter]);
+
+            var divmsg = document.getElementById("messageDiv");
+            if(lapcounter == 0){
+                divmsg.innerText = "The first lap was recorded";
+            }
+            else if (lapcounter == 1){
+                divmsg.innerText = "The second lap was recorded"
+            }
+            else{
+                divmsg.innerText = " Lap: " + (lapcounter+1) + " was recorded";
+            }
+            // increses lap counter by 1
+            lapcounter++;
+        }
+
+        function displayLaps(){
+            var divlaps = document.getElementById("LapDiv");
+
+            // create unorderd list
+            var ulLaps = document.createElement("ul");
+
+            // add list to display laps div
+            divlaps.appendChild(ulLaps);
+
+            // loop through the laps array to add the lap times to lis
+            for (var i=0; i < lapArr.length; i++){
+                var LiLap = document.createElement("li");
+
+                LiLap.textContent = "Lap: " + (i+1) + ": " + lapArr[i];
+
+                // add list item to list
+                ulLaps.appendChild(LiLap);
+            }
+        }
