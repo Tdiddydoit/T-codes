@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event codes</title>
+    <link href="First CSS.css" rel="stylesheet">
+</head>
+<body>
+   <h1>Event codes</h1> 
+
+   <p>Click the button to geerate 5 random numbers anc check if numbers are even or odd</p>
+    <button onclick="Geni();">Generate Numbers</button>
+    <!-- display results -->
+    <div id="output"></div>
+
+    <script>
+        // function to gen random numbers and check for evens and odds
+       function Geni(){
+        var outputDiv = document.getElementById("output");
+        //clear div after every run
+        outputDiv.innerHTML= "";
+        // Generate 5 random nubers
+        // 3 parts to setting up for loop
+        // 1. Set up a counter with default value
+        // 2. The condtion that needs to be met for loop to run
+        // 3. change the value of counter; i++ is tge sane as i+ i+i
+        for (var i = 0; i <7; i++){
+            //random number 
+            var randomNumber = Math.floor(Math.random() * 100);
+
+            // Set varaible to hold whether the number is even or odd
+            var result = "";
+            // If the random n=number u=is even, there will be no remainder
+            // % mod / Modylus; divide tge nuber by 2, if the reamaider is 0, then the statement is to
+
+            if(randomNumber % 2 == 0){
+            result = "even";
+        }
+        else{
+            result = "odd";
+        }
+
+        // out put will be generated number: 2 REsult even
+        var outputText = " Generated Number: " + randomNumber + ", Result:" + result;
+
+        // update div output text
+        outputDiv.innerHTML = outputDiv.innerHTML + "<Br>" + outputText
+     }
+       } 
+    </script>
+
+   
+</body>
+</html>

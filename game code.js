@@ -47,6 +47,7 @@ var die = Math.random() * 6;
 // Make sure number is raounded
 return Math.ceil(die);
 }
+//////////////////////////////////////////////////////////
 function Grover(){
     var fname = document.getElementById("fname").value;               
     var lname = document.getElementById("lname").value;
@@ -56,7 +57,7 @@ function Grover(){
     console.log("Last name" + lname);
     console.log("Zipcode" + zipcode);
     
-    var Fullname = fname + "" +lname;
+    var Fullname = fname + " " +lname;
     console.log("Fullname" + Fullname);
 
     // checks name length  if invalid code will reject
@@ -71,12 +72,12 @@ function Grover(){
 }
    else{
     console.log("We are good to go ")
-    alert("Welcome. " + Fullname + ". The secret word is pancakes");
+    alert("Welcome " + Fullname + " the secret word is pancakes.");
     return true;
    }
     
 }
-
+//////////////////////////////////////////////////////////////////
     // Track interval to stop it
     var Jugo = 0;
     // This fuction will make image move
@@ -108,6 +109,7 @@ function Grover(){
             return Math.floor(Math.random()* 1000);
            //################################################### 
         }
+        ////////////////////////////////////////////////
         function Eyes(){
             //EyeTest("radar");
             //EyeTest("Fun stuff");
@@ -152,6 +154,7 @@ function Grover(){
             return strRev == strCleaned;
         }
         
+/////////////////////////////////////////////////////
 
         function Sound(){
             // creates audio element
@@ -280,7 +283,7 @@ function Grover(){
                     //hide button
                     statsbutton.remove();
             }
-
+////////////////////////////////////////////////////////////////////////////
             // Lap recorder
                // this variable will track current lap
         // value will change as more laps are recorded
@@ -333,3 +336,6 @@ function Grover(){
                 ulLaps.appendChild(LiLap);
             }
         }
+        ///////////////////////////////////////////////////////
+
+        

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java script</title>
+</head>
+<body>
+    <table id="dataTable">
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Occupation</th>
+        </tr>
+    </table>
+
+    <script>
+        // create array of data
+        var data = [
+            ['jhone doe', 30, 'Engineer'],
+            ['Jane smith', 25, 'programer'],
+            ['Michal roberts', 40, 'Manager'],
+            ['Emily davis', 22, 'Designer'],
+        ];
+
+        // create function to populate the table with data
+        function buildTable(data){
+            // nickname that points to HTML table
+            var table = document.getElementById("dataTable");
+
+            // loop through arraays and create table of rows and colums
+            for (var i=0; i <data.length; i++){
+                var item = data[i];
+                var row = document.createElement("tr");
+                
+                // lop through nested array
+                for (var j=0; j < item.length;){
+                    // create new table cell
+                    var cell = document.createElement("td");
+
+                // add the current array item value
+                    cell.textContent = item[j];
+                    row.appendChild(cell);
+                }
+
+                table.appendChild(row);
+            }
+        }
+
+        buildTable(data);
+    </script>
+</body>
+</html>

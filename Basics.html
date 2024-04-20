@@ -1,0 +1,153 @@
+<html>
+    
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link href="First CSS.css" rel="stylesheet">
+
+        <main>
+            <nav>
+                <!-- unordered list -->
+                <ul>
+                    <li> <a href="INDEX.html">Home</a></li>
+                    <li><a href="Boards.html">Boards</a></li>
+                    <li><a href="Game.html">Game</a></li>
+                    <li><a href="Palindrome testimg.html">Palindrome</a></li>
+                    <li><a href="Basics.html">Basics</a></li>
+                    <li><a href="String Html.html">Strings</a></li>
+                    <li><a href="Incorp sound.html">Sound</a></li>
+                    <li><a href="Table code.html">Table</a></li>
+                    <li><a href="Pizza.html">Pizza</a></li>
+                </ul>
+                <!-- a tag is the anchor tag making a hyper link -->
+              
+             </nav>
+             </main>
+    </head>
+    
+<script>
+    
+// creating a varible called age with a defualt value
+// one equal sign is assignment , the varaible on the left with the value on the right
+var age = 5;
+
+
+// 2 equal signs means check for equality, or does the value on the left match the one one the right
+if(age == 5){
+// This code will run if the value of age is 5
+alert("age=" + age);
+}
+// this code will run if IF code fails so if age varaible is 6
+else if (age== 6){
+    alert("age=" + age);
+}
+// ELSE code will happen if neither previous codes happen no matter what
+else{
+    alert("age was not 5 or 6");
+}
+</script>
+<body>
+    <h1>Loops</h1>
+
+    <script>
+        /* loops run code repeatedly
+         Great for displaying data
+         For loop and while loop
+
+        for loops used when you want code only used a certain amount of times
+
+       1st part of loop is a counter variable and we set it  to 0 the 1 of coding
+        2nd part is the condition the loop need to have met to run 
+        and will run untill condition is not true
+        3rd part is incrementing the counter variale each time the loop runs
+        i++ is the same thing as i = i + 1*/
+        
+        for(var i = 0; i < 5; i++){
+            alert("I=" + i);
+        }
+     
+        //While loops run forever while there condition is met
+        //counter varaible set to zero
+        var counter = 0;
+        //while loop will fun untill counter is equal to 5
+        while(counter < 5){
+            //Displays counter value in an alert
+            alert("counter " + counter);
+
+            //Increasers the value of counter by 1 every time while loop runs
+            counter++;
+        }
+        
+        var firstname = "T";
+        console.log("The value of our first name varaible is "+ firstname);
+        
+    </script>
+    <!-- we will buld an HTML from to gather and valaidate user info post is the best  -->
+    <form method="post" onsubmit="return Zeus();">
+        <label for="fullname">Full Name</label>
+        <!-- Text box input wheree we can gather the users full name -->
+     <input type="text" id="fullname" name="fullname">
+     <br><br>
+    <label for="theEmail">Email Address</label>
+    <!-- Test box for users email -->
+     <input type="email" id="theEmail" name="theEmail">
+     <br><br> 
+     <label for="age">Age</label>
+    <input type="number" id="age" name="age">
+    <!-- textbox for age -->
+    <br><br>
+    <!-- creat a submit button for all this information -->
+    <input type="submit" value="Submit">
+    </form>
+    <script>
+        // This function will validate the infortion
+        function Zeus(){
+            var fullname = document .getElementById("fullname").value;
+            var email = document.getElementById("theEmail").value;
+            var age = document .getElementById("age").value;
+
+            //Checks for and deletes extra spaces
+            if(fullname.trim() ==""){
+            alert("Please enter your name.");
+            return false;
+            }
+
+        // allow the from to submit to the server
+        if(email.trim() == ""){
+            alert("Please enter your email. ");
+            return false;
+        }
+        if(age.trim() == ""){
+            alert("Please enter your age. ");
+            return false;
+        }
+        if(isNaN(age)){
+        alert("Please enter a valid age");
+        return false;
+        }
+            return true;
+        }
+    </script>
+    <!-- event driven programing -->
+    <h2>Event driven programing</h2>
+    <button id="Button1">Click Me</button>
+    <br><br>
+    <button id="Button2" onclick="GoTime2();">Click Me Too</button>
+    <script>
+        var Button1 = document.getElementById("Button1");
+        // Event handeler code will run when button is pressed
+        function GoTime(event){
+            alert("Button Pressed")
+        }
+        // Make button wait for the event 
+        Button1.addEventListener("click", GoTime);
+        // function for button two click
+        function GoTime2(event){
+            alert("Button 2 Pressed");
+        }
+    </script>
+  
+</body>
+</html>

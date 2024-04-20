@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>W 10 pizza stats</title>
+    <link rel="stylesheet" href="First CSS.css">
+    <main>
+        <nav>
+            <!-- unordered list -->
+            <ul>
+                <li> <a href="INDEX.html">Home</a></li>
+                <li><a href="Boards.html">Boards</a></li>
+                <li><a href="Game.html">Game</a></li>
+                <li><a href="Palindrome testimg.html">Palindrome</a></li>
+                <li><a href="Basics.html">Basics</a></li>
+                <li><a href="String Html.html">Strings</a></li>
+                <li><a href="Incorp sound.html">Sound</a></li>
+                <li><a href="Table code.html">Table</a></li>
+                <li><a href="Pizza.html">Pizza</a></li>
+            </ul>
+            <!-- a tag is the anchor tag making a hyper link -->
+          
+         </nav>
+         </main>
+</head>
+<body>
+    <h1>Pizza Chef stats</h1>
+
+    <p>
+        Total pizzas Made: <span id="TotalPizzas">0</span>
+    </p>
+    <p>
+        Baking Level: <span id="bakingLevel"></span>
+    </p>
+
+    <label for="newPizzas">New Pizzas Baked: </label>
+    <input type="number" id="newPizzas" name="newPizzas" min="0" max="1000" value="0">
+
+    <button onclick="NewMan();">Update stats</button>
+
+    <p>
+        Avalible Toppings: <span id="toppings"></span>
+        <br>
+        <span id="toppings"></span>
+    </p>
+
+    <script>
+        // function runs on button click
+        function NewMan(){
+            // The nuber of pizza users entereted in the text box
+            var Bake = parseInt(document.getElementById("newPizzas").value);
+
+            // set up a pointer to the totalPizzas span
+            var TotalZas = document.getElementById("TotalPizzas")
+
+            // set up backing level
+            var BLevel = document.getElementById("bakingLevel")
+
+            // create varaibl to hold the return value from New man
+            var totalPizzas = Pcounter(Bake)
+
+            // update stats
+            TotalZas.innerText = totalPizzas;
+
+            // get pizza chef stats
+            BLevel.innerText = UpdateStats(totalPizzas);
+
+        }
+        // Caculate total pizzas baked
+        function Pcounter(newPizzas){
+            // Get current amount of pizzas baked
+            var MadeZas = parseInt(document.getElementById("TotalPizzas").innerText);
+            var Total = MadeZas + newPizzas;
+
+            return Total
+        }
+        // create baking level tracker
+        function UpdateStats(totalNumPizzas){
+            if(totalNumPizzas>= 100){
+                return "Extradoinary Chef";
+            }
+            else if (totalNumPizzas >= 50){
+                return "Expert Chef";
+            }
+            else if (totalNumPizzas >= 20){
+                return "Skilled Chef";
+            }
+            else{
+                return "Beginner Chef";
+            }
+        }
+        var topping1 = "Pepperoni";
+        var topping2 = "Mushrooms";
+        var topping3 = "Onions";
+        var topping4 = "Sasuage";
+        var topping5 = "Peppers";
+
+        
+        document.getElementById("toppings").innerText = topping1 + ", " + topping2 + ", " + topping3 + ", " + topping4 + ", " + topping5;
+
+            
+    </script>
+</body>
+</html>
